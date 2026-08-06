@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnotServe — Infraestructura Enterprise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #03060d;
+            --surface: rgba(13, 20, 36, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-accent: rgba(139, 92, 246, 0.35);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --emerald: #10b981;
+            --purple: #8b5cf6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg); color: var(--text-main); font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.6; }
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+        /* Navbar */
+        nav { border-bottom: 1px solid var(--border); padding: 16px 0; background: rgba(3, 6, 13, 0.85); backdrop-filter: blur(20px); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text-main); }
+        .logo-svg { width: 32px; height: 32px; stroke: var(--emerald); fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+        .logo-text { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.5px; }
+        .logo-text span { color: var(--emerald); }
+
+        .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+
+        /* Hero KnotServe */
+        .hero-knotserve {
+            padding: 120px 0 70px; text-align: center;
+            background: radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.12), transparent 60%);
+        }
+        .tag-purple {
+            display: inline-block; background: rgba(139, 92, 246, 0.1);
+            color: var(--purple); border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 6px 18px; border-radius: 100px; font-size: 0.85rem; font-weight: 700; margin-bottom: 24px;
+        }
+        .hero-knotserve h1 { font-size: 3.4rem; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 20px; }
+        .hero-knotserve p { color: var(--text-muted); max-width: 720px; margin: 0 auto 40px; font-size: 1.2rem; }
+
+        /* Architecture Features */
+        .feature-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; margin: 50px 0 100px; }
+        .box { background: var(--surface); border: 1px solid var(--border); padding: 40px; border-radius: 18px; text-align: left; }
+        .box h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+        .box p { font-size: 0.98rem; color: var(--text-muted); }
+
+        footer { border-top: 1px solid var(--border); padding: 60px 0; color: var(--text-muted); font-size: 0.9rem; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo-brand">
+                <svg class="logo-svg" viewBox="0 0 100 100">
+                    <path d="M 30 20 C 15 20, 10 40, 30 60 C 50 80, 70 80, 70 60 C 70 40, 50 20, 30 20 Z" />
+                    <path d="M 70 20 C 85 20, 90 40, 70 60 C 50 80, 30 80, 30 60 C 30 40, 50 20, 70 20 Z" />
+                </svg>
+                <span class="logo-text">Knot<span>Linux</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="download.html">Descargas</a></li>
+                <li><a href="knotserve.html" class="active">KnotServe</a></li>
+                <li><a href="https://github.com/KnotLinuxProject/KnotLinux" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero-knotserve">
+            <span class="tag-purple">DESARROLLO DEDICADO A INFRAESTRUCTURA</span>
+            <h1>KnotServe Enterprise Platform</h1>
+            <p>La edición para servidores de KnotLinux: orientada a alta disponibilidad, despliegues de contenedores aislados y un uso óptimo del procesamiento local.</p>
+
+            <div class="feature-cards">
+                <div class="box">
+                    <h3>Huella de Memoria Mínima</h3>
+                    <p>Mínimo número de procesos en segundo plano para garantizar que el 99% de los recursos del hardware se dediquen a tus servicios.</p>
+                </div>
+                <div class="box">
+                    <h3>Integración con Contenedores</h3>
+                    <p>Optimizado para ejecutar entornos aislados como Docker y Podman con latencia cero en operaciones I/O de almacenamiento.</p>
+                </div>
+                <div class="box">
+                    <h3>Seguridad Hardened</h3>
+                    <p>Políticas restrictivas a nivel de kernel y módulos de seguridad para prevenir accesos no autorizados en nodos expuestos.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 KnotLinux Project.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
